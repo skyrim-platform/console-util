@@ -1,0 +1,40 @@
+{
+    "name": "@skyrim-platform/console-util",
+    "version": "2.3.0",
+    "description": "TypeScript type definitions for the ConsoleUtil Skyrim utility",
+    "main": "",
+    "types": "index.d.ts",
+    "license": "MIT",
+    "homepage": "https://www.nexusmods.com/skyrimspecialedition/mods/24858",
+    "author": "Mrowr Purr <mrowr.purr@gmail.com>",
+    "contributors": [
+        {
+            "name": "Ryan-rsm-McKenzie ",
+            "url": "https://github.com/Ryan-rsm-McKenzie"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/skyrim-types/ConsoleUtil.git"
+    },
+    "scripts": {
+        "build": "tsc",
+        "package": "yarn deploy && yarn pack",
+        "deploy": "cpy \"dist/*\" .",
+        "cleanup": "rimraf \"*.js\" \"*.ts\" \"*.tgz\""
+    },
+    "devDependencies": {
+        "cpy": "^8.1.2",
+        "cpy-cli": "^3.1.1",
+        "rimraf": "^3.0.2",
+        "tsc": "^2.0.3",
+        "typescript": "^4.5.4"
+    },
+    "files": [
+        "*.js",
+        "*.ts"
+    ],
+    "dependencies": {
+        "@skyrim-platform/skyrim-platform": "file:../skyrim-platform"
+    }
+}
