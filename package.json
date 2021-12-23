@@ -5,23 +5,16 @@
     "main": "",
     "types": "index.d.ts",
     "license": "MIT",
-    "homepage": "https://www.nexusmods.com/skyrimspecialedition/mods/24858",
-    "author": "Mrowr Purr <mrowr.purr@gmail.com>",
-    "contributors": [
-        {
-            "name": "Ryan-rsm-McKenzie ",
-            "url": "https://github.com/Ryan-rsm-McKenzie"
-        }
-    ],
+    "homepage": "https://github.com/skyrim-platform/console-util",
     "repository": {
         "type": "git",
-        "url": "https://github.com/skyrim-types/ConsoleUtil.git"
+        "url": "https://github.com/skyrim-platform/console-util.git"
     },
     "scripts": {
         "build": "tsc",
-        "package": "yarn deploy && yarn pack",
-        "deploy": "cpy \"dist/*\" .",
-        "cleanup": "rimraf \"*.js\" \"*.ts\" \"*.tgz\""
+        "watch": "tsc --watch",
+        "publish": "npm run build && cpy \"dist/*\" . && npm publish && npm run cleanup",
+        "cleanup": "rimraf \"*.js\" \"*.ts\" dist/"
     },
     "devDependencies": {
         "cpy": "^8.1.2",
@@ -34,7 +27,11 @@
         "*.js",
         "*.ts"
     ],
+    "keywords": [
+        "skyrim",
+        "skyrim platform"
+    ],
     "dependencies": {
-        "@skyrim-platform/skyrim-platform": "file:../skyrim-platform"
+        "@skyrim-platform/skyrim-platform": "^2.3.1"
     }
 }
